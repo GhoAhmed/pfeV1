@@ -7,6 +7,7 @@ using API.Dtos.Announcement;
 using API.Mappers;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
@@ -23,10 +24,10 @@ public class AnnouncementController : ControllerBase
 
     //Get All Announcements
     [HttpGet]
-    public IActionResult GetAnnouncements()
+    public async Task<IActionResult> GetAnnouncements()
     {
-        var announcements = _context.Announcements.ToList()
-        .Select(s => s.ToAnnouncementDto());
+        var announcements = await _context.Announcements.ToListAsync();
+        var announcementDto = announcements.Select(s => s.ToAnnouncementDto());
         return Ok(announcements);
     }
 
