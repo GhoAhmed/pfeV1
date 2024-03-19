@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Mappers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -21,7 +22,8 @@ public class UserController : ControllerBase
     [HttpGet]
     public IActionResult GetUsers()
     {
-        var users = _context.Users.ToList();
+        var users = _context.Users.ToList()
+        .Select(s => s.ToUserDto());
         return Ok(users);
     }
 

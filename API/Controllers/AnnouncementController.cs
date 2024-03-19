@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Mappers;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,7 +23,8 @@ public class AnnouncementController : ControllerBase
     [HttpGet]
     public IActionResult GetAnnouncements()
     {
-        var announcements = _context.Announcements.ToList();
+        var announcements = _context.Announcements.ToList()
+        .Select(s => s.ToAnnouncementDto());
         return Ok(announcements);
     }
 
