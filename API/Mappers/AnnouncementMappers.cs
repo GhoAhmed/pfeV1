@@ -15,8 +15,27 @@ namespace API.Mappers
             {
                 AnnouncementId = announcementModel.AnnouncementId,
                 Title = announcementModel.Title,
+                Description = announcementModel.Description,
+                ImagesUrls = announcementModel.ImagesUrls,
+                Space = (Dtos.Announcement.HouseSpace)announcementModel.Space,
+                Address = announcementModel.Address,
                 AmountPerMonth = announcementModel.AmountPerMonth,
                 UserId = announcementModel.UserId
+            };
+        }
+
+        public static Announcement ToAnnouncementFromCreateDto(this CreateAnnouncementRequestDto announcementDto)
+        {
+            return new Announcement
+            {
+                Title = announcementDto.Title,
+                Description = announcementDto.Description,
+                ImagesUrls = announcementDto.ImagesUrls,
+                Space = (Models.HouseSpace)announcementDto.Space,
+                Address = announcementDto.Address,
+                AmountPerMonth = announcementDto.AmountPerMonth,
+                UserId = announcementDto.UserId
+
             };
         }
 

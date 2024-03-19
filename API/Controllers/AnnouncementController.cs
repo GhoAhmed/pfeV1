@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Dtos.Announcement;
 using API.Mappers;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,7 @@ public class AnnouncementController : ControllerBase
         _context = context;
     }
 
+    //Get All Announcements
     [HttpGet]
     public IActionResult GetAnnouncements()
     {
@@ -28,6 +30,7 @@ public class AnnouncementController : ControllerBase
         return Ok(announcements);
     }
 
+    //Get Announcement By Id
     [HttpGet("{id}")]
     public IActionResult GetAnnouncement([FromRoute] int id)
     {
@@ -38,5 +41,16 @@ public class AnnouncementController : ControllerBase
         }
         return Ok(announcement);
     }
+
+    //Post Announcement
+    [HttpPost]
+    public IActionResult Create([FromBody] CreateAnnouncementRequestDto announcementDto)
+    {
+        var announcementModel = announcementDto.ToAnnouncementFromCreateDto();
+        _context.Announcements.Add(announcementModel);
+        _context.SaveChanges();
+        return CreatedAtAction(nameof(GetAnnouncement), new { id = announcementModel.AnnouncementId }, announcementModel.ToAnnouncementDto());
+    }
+
 
 }
