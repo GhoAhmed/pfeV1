@@ -15,6 +15,6 @@ public class ApplicationDBContext : DbContext
     }
 
     public DbSet<User> Users { get; set; } // Create Users Table
-    public DbSet<Announcement> Annoucements { get; set; } // Create Announcements Table
+    public DbSet<Announcement> Announcements { get; set; } // Create Announcements Table
 
 }

@@ -15,7 +15,7 @@ public class Announcement
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     [Required(ErrorMessage = "Images URLs are required")]
-    public List<string> ImagesUrls { get; set; }
+    public List<string> ImagesUrls { get; set; } = [];
     [Required(ErrorMessage = "Space is required")]
     public HouseSpace Space { get; set; }
     public string Address { get; set; } = string.Empty;
