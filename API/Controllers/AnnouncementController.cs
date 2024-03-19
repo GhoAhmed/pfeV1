@@ -42,7 +42,7 @@ public class AnnouncementController : ControllerBase
         return Ok(announcement);
     }
 
-    //Post Announcement
+    //Create Announcement
     [HttpPost]
     public IActionResult Create([FromBody] CreateAnnouncementRequestDto announcementDto)
     {
@@ -51,6 +51,44 @@ public class AnnouncementController : ControllerBase
         _context.SaveChanges();
         return CreatedAtAction(nameof(GetAnnouncement), new { id = announcementModel.AnnouncementId }, announcementModel.ToAnnouncementDto());
     }
+
+    //Update Announcement
+    [HttpPut]
+    [Route("{id}")]
+    public IActionResult Update([FromRoute] int id, [FromBody] UpdateAnnouncementRequestDto updateDto)
+    {
+        var announcementModel = _context.Announcements.FirstOrDefault(x => x.AnnouncementId == id);
+        if (announcementModel == null)
+        {
+            return NotFound();
+        }
+        announcementModel.Title = updateDto.Title;
+        announcementModel.Description = updateDto.Description;
+        announcementModel.ImagesUrls = updateDto.ImagesUrls;
+        announcementModel.Space = (Models.HouseSpace)updateDto.Space;
+        announcementModel.Address = updateDto.Address;
+        announcementModel.AmountPerMonth = updateDto.AmountPerMonth;
+        announcementModel.UserId = updateDto.UserId;
+        _context.Announcements.Update(announcementModel);
+        _context.SaveChanges();
+        return Ok(announcementModel.ToAnnouncementDto());
+    }
+
+    //Delete Announcement
+    [HttpDelete]
+    [Route("{id}")]
+    public IActionResult Delete([FromRoute] int id)
+    {
+        var announcementModel = _context.Announcements.FirstOrDefault(x => x.AnnouncementId == id);
+        if (announcementModel == null)
+        {
+            return NotFound();
+        }
+        _context.Announcements.Remove(announcementModel);
+        _context.SaveChanges();
+        return NoContent();
+    }
+
 
 
 }
