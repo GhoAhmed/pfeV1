@@ -17,8 +17,44 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\img1.webp",
-      "PackagePath": "staticwebassets\\images\\img1.webp"
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\adverts\\test1.webp",
+      "PackagePath": "staticwebassets\\images\\adverts\\test1.webp"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\adverts\\test2.webp",
+      "PackagePath": "staticwebassets\\images\\adverts\\test2.webp"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\adverts\\test3.webp",
+      "PackagePath": "staticwebassets\\images\\adverts\\test3.webp"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\adverts\\test4.webp",
+      "PackagePath": "staticwebassets\\images\\adverts\\test4.webp"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\adverts\\test5.webp",
+      "PackagePath": "staticwebassets\\images\\adverts\\test5.webp"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\adverts\\test6.webp",
+      "PackagePath": "staticwebassets\\images\\adverts\\test6.webp"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\logos\\logo1.png",
+      "PackagePath": "staticwebassets\\images\\logos\\logo1.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\bateau.png",
+      "PackagePath": "staticwebassets\\images\\slides\\bateau.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\bord-de-mer.png",
+      "PackagePath": "staticwebassets\\images\\slides\\bord-de-mer.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\bowling.png",
+      "PackagePath": "staticwebassets\\images\\slides\\bowling.png"
     },
     {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\camping.png",
@@ -33,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\slides\\chambre.png"
     },
     {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\desert.png",
+      "PackagePath": "staticwebassets\\images\\slides\\desert.png"
+    },
+    {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\foret.png",
       "PackagePath": "staticwebassets\\images\\slides\\foret.png"
     },
@@ -41,8 +81,16 @@
       "PackagePath": "staticwebassets\\images\\slides\\grande-maison.png"
     },
     {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\hotel.png",
+      "PackagePath": "staticwebassets\\images\\slides\\hotel.png"
+    },
+    {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\la-grotte.png",
       "PackagePath": "staticwebassets\\images\\slides\\la-grotte.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\les-terres-agricoles.png",
+      "PackagePath": "staticwebassets\\images\\slides\\les-terres-agricoles.png"
     },
     {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\maison.png",
