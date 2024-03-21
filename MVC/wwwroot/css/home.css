@@ -1,0 +1,16 @@
+.dropdown-menu.dropdown-menu-right {
+    left: auto;
+    right: 0;
+}
+
+.logo {
+    width: 80%;
+    height: 80%;
+    margin-bottom: 18%;
+    margin-left: 20%;
+}
+
+.avatar-icon {
+    width: 40%;
+    height: 40%;
+}
