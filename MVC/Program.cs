@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MVC.Data;
+using MVC.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddIdentity<AppUser, IdentityRole>(
+    options =>
+    {
+        options.Password.RequiredUniqueChars = 0;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequiredLength = 10;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireLowercase = false;
+    }
+)
+    .AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 
