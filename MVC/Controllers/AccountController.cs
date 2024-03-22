@@ -55,7 +55,7 @@ namespace MVC.Controllers
                 AppUser user = new()
                 {
                     Name = model.Name,
-                    UserName = model.Email,
+                    UserName = model.Name,
                     Email = model.Email,
                     Address = model.Address
                 };
