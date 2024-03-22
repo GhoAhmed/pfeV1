@@ -3,3 +3,50 @@
 @{
     ViewData["Title"] = "Register";
 }
+<div class="container">
+    <form asp-action="Register" method="post">
+        <fieldset>
+            <legend>Sign up</legend>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <label asp-for="Name" class="form-label mt-4"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Email" class="form-label mt-4"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Address" class="form-label mt-4"></label>
+                <textarea asp-for="Address" class="form-control"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Password" class="form-label mt-4"></label>
+                <input asp-for="Password" class="form-control" autocomplete="off">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="ConfirmPassword" class="form-label mt-4"></label>
+                <input asp-for="ConfirmPassword" class="form-control" autocomplete="off">
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+        </fieldset>
+        <div class="row">
+            <div class="col-8">
+                <a asp-action="Login" class="text-decoration-none float-start mt-2">Already have account?</a>
+            </div>
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary float-end">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

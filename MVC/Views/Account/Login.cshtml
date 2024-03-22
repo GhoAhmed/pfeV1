@@ -7,7 +7,7 @@
     <form asp-action="Login" method="post">
         <fieldset>
             <legend>Sign in</legend>
-            <div asp-validation-summary="ModelOnly"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div>
                 <label asp-for="UserName" class="form-label mt-4"></label>
                 <input asp-for="UserName" class="form-control" />
@@ -34,3 +34,9 @@
         </div>
     </form>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

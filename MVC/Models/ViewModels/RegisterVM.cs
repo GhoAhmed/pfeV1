@@ -20,7 +20,11 @@ namespace MVC.Models.ViewModels
         public string? Password { get; set; }
 
         [Compare("Password", ErrorMessage = "Password do not match.")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
         public string? ConfirmPassword { get; set; }
+
+        [DataType(DataType.MultilineText)]
         public string? Address { get; set; }
     }
 }
