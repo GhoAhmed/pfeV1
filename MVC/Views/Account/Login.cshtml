@@ -3,36 +3,43 @@
 @{
     ViewData["Title"] = "Login";
 }
-<div class="container">
-    <form asp-action="Login" method="post">
-        <fieldset>
-            <legend>Sign in</legend>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div>
-                <label asp-for="UserName" class="form-label mt-4"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="Password" class="form-label mt-4"></label>
-                <input asp-for="Password" class="form-control" autocomplete="off">
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="mb-1 form-check">
-                <label class="form-check-label">
-                    <input asp-for="RememberMe" class="form-check-input">@Html.DisplayNameFor(a => a.RememberMe)
-                </label>
-            </div>
-        </fieldset>
-        <div class="row">
-            <div class="col-8">
-                <a asp-action="Register" class="text-decoration-none float-start mt-2">Don't have account?</a>
-            </div>
-            <div class="col-4">
-                <button type="submit" class="btn btn-primary float-end">Login</button>
-            </div>
+
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="container mb-4">
+        <div class="text-center">
+            <img src="~/images/logos/logo2V1.png" alt="Logo" class="img-fluid mb-4" style="max-width: 150px;" />
         </div>
-    </form>
+        <!-- Adjust the max-width as needed -->
+        <form asp-action="Login" method="post">
+            <fieldset>
+                <legend class="text-center">Login</legend>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div>
+                    <label asp-for="UserName" class="form-label mt-4"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Password" class="form-label mt-4"></label>
+                    <input asp-for="Password" class="form-control" autocomplete="off">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="mb-1 form-check">
+                    <label class="form-check-label">
+                        <input asp-for="RememberMe" class="form-check-input">@Html.DisplayNameFor(a => a.RememberMe)
+                    </label>
+                </div>
+            </fieldset>
+            <div class="row">
+                <div class="col-8">
+                    <a asp-action="Register" class="text-decoration-none float-start mt-2">Don't have account?</a>
+                </div>
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary float-end">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 @section Scripts {

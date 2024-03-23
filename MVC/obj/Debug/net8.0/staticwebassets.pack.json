@@ -41,8 +41,36 @@
       "PackagePath": "staticwebassets\\images\\adverts\\test6.webp"
     },
     {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\avatars\\avatar1.png",
+      "PackagePath": "staticwebassets\\images\\avatars\\avatar1.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\avatars\\avatar1V2.png",
+      "PackagePath": "staticwebassets\\images\\avatars\\avatar1V2.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\avatars\\avatar1V3.png",
+      "PackagePath": "staticwebassets\\images\\avatars\\avatar1V3.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\avatars\\avatar2.png",
+      "PackagePath": "staticwebassets\\images\\avatars\\avatar2.png"
+    },
+    {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\logos\\logo1.png",
       "PackagePath": "staticwebassets\\images\\logos\\logo1.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\logos\\logo2V1.png",
+      "PackagePath": "staticwebassets\\images\\logos\\logo2V1.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\logos\\logo2V2.png",
+      "PackagePath": "staticwebassets\\images\\logos\\logo2V2.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\logos\\logo2V3.png",
+      "PackagePath": "staticwebassets\\images\\logos\\logo2V3.png"
     },
     {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\bateau.png",
