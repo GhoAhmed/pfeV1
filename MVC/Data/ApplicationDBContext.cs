@@ -16,6 +16,6 @@ namespace MVC.Data
 
         }
 
-        //public DbSet<Client> clients { get; set; } // Create clients Table
+        public DbSet<Announcement> announcements { get; set; } // Create announcements Table
     }
 }

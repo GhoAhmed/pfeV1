@@ -1,0 +1,9 @@
+@model List<Announcement>
+@{
+    ViewData["Title"] = "Profile";
+}
+
+@foreach (var announcement in Model)
+{
+    <p>@announcement.Title</p>
+}

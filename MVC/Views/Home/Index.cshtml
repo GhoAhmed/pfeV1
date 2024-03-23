@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Announcement>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -66,285 +67,59 @@
 
     <hr />
     <!------------- Announcements ------------->
-    <!--- row 1 --->
+    <!--- row --->
     <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div id="carouselExample1" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 1">
+        @foreach (var announcement in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div id="carouselExample1" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 3">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 3">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@announcement.Title</h5>
+                        <p class="card-text">@announcement.Description</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="renter">
+                                <h6>By : @(announcement.AppUser?.Name ?? "Unknown")</h6>
+                            </div>
+                            <div>
+                                <a href="#" class="heart-icon"><i class="bi bi-heart"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Description</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="rating">
-                            <!-- Insert your rating logic here (represented by stars) -->
-                        </div>
-                        <div>
-                            <a href="#" class="heart-icon"><i class="bi bi-heart"></i></a>
-                        </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Price per month: @announcement.PricePerMonth</li>
+                        <li class="list-group-item">Price per night: @announcement.PricePerNight</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Details</a>
                     </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Price per month: 500 DT</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Details</a>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div id="carouselExample2" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="~/images/adverts/test1.webp" class="d-block w-100" alt="Image 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test1.webp" class="d-block w-100" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test1.webp" class="d-block w-100" alt="Image 3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title 1</h5>
-                    <p class="card-text">Description 1</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="rating">
-                            <!-- Insert your rating logic here (represented by stars) -->
-                        </div>
-                        <div>
-                            <a href="#" class="heart-icon"><i class="bi bi-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Price per month: 500 DT</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Details</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div id="carouselExample3" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="~/images/adverts/test2.webp" class="d-block w-100" alt="Image 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test2.webp" class="d-block w-100" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test2.webp" class="d-block w-100" alt="Image 3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title 2</h5>
-                    <p class="card-text">Description 2</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="rating">
-                            <!-- Insert your rating logic here (represented by stars) -->
-                        </div>
-                        <div>
-                            <a href="#" class="heart-icon"><i class="bi bi-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Price per month: 500 DT</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Details</a>
-                </div>
-            </div>
-        </div>
-
+        }
     </div>
-    <!--- /row 1 --->
-    <!--- row 2 --->
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div id="carouselExample4" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="~/images/adverts/test3.webp" class="d-block w-100" alt="Image 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test3.webp" class="d-block w-100" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test3.webp" class="d-block w-100" alt="Image 3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample4"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample4"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title 1</h5>
-                    <p class="card-text">Description 1</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="rating">
-                            <!-- Insert your rating logic here (represented by stars) -->
-                        </div>
-                        <div>
-                            <a href="#" class="heart-icon"><i class="bi bi-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Price per month: 500 DT</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Details</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div id="carouselExample5" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="~/images/adverts/test4.webp" class="d-block w-100" alt="Image 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test4.webp" class="d-block w-100" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test4.webp" class="d-block w-100" alt="Image 3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample5"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample5"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title 2</h5>
-                    <p class="card-text">Description 2</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="rating">
-                            <!-- Insert your rating logic here (represented by stars) -->
-                        </div>
-                        <div>
-                            <a href="#" class="heart-icon"><i class="bi bi-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Price per month: 500 DT</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Details</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div id="carouselExample6" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="~/images/adverts/test5.webp" class="d-block w-100" alt="Image 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test5.webp" class="d-block w-100" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/images/adverts/test5.webp" class="d-block w-100" alt="Image 3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample6"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample6"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title 3</h5>
-                    <p class="card-text">Description 3</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="rating">
-                            <!-- Insert your rating logic here (represented by stars) -->
-                        </div>
-                        <div>
-                            <a href="#" class="heart-icon"><i class="bi bi-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Price per month: 500 DT</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Details</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--- /row 2 --->
+    <!--- /row --->
     <!------------- /Announcements ------------->
 
 </div>

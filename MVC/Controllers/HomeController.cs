@@ -1,24 +1,27 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MVC.Data;
 using MVC.Models;
 
 namespace MVC.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    //private readonly ILogger<HomeController> _logger;
+    private readonly ApplicationDBContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ApplicationDBContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var announcementsWithUsers = await _context.announcements.Include(a => a.AppUser).ToListAsync();
+        return View(announcementsWithUsers);
     }
-
     public IActionResult Privacy()
     {
         return View();
