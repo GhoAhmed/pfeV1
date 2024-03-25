@@ -9,7 +9,7 @@ namespace MVC.Models.ViewModels
     public class LoginVM
     {
         [Required(ErrorMessage = "UserName is Required.")]
-        [Display(Name = "Pseudo")]
+        [Display(Name = "Name")]
         public string? UserName { get; set; }
         [Required(ErrorMessage = "Password is Required.")]
         [DataType(DataType.Password)]

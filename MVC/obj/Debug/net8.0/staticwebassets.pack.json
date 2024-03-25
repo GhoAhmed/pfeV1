@@ -129,6 +129,10 @@
       "PackagePath": "staticwebassets\\images\\logos\\logo2V3.png"
     },
     {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\logos\\wlcmImage.jpg",
+      "PackagePath": "staticwebassets\\images\\logos\\wlcmImage.jpg"
+    },
+    {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\bateau.png",
       "PackagePath": "staticwebassets\\images\\slides\\bateau.png"
     },

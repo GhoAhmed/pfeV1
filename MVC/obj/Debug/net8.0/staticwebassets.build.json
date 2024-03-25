@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tOjB8Tlye6kM/u+tuDKfinpWX1ebk476STW1WT7kgX4=",
+  "Hash": "y+zWiVyLBj1wm6y9zNMmJKXQsiWnZbh5e+2JnthQe1U=",
   "Source": "MVC",
   "BasePath": "_content/MVC",
   "Mode": "Default",
@@ -642,6 +642,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logos\\logo2V3.png"
+    },
+    {
+      "Identity": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\logos\\wlcmImage.jpg",
+      "SourceId": "MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\asp\\pfe\\MVC\\wwwroot\\",
+      "BasePath": "_content/MVC",
+      "RelativePath": "images/logos/wlcmImage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logos\\wlcmImage.jpg"
     },
     {
       "Identity": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\slides\\bateau.png",
