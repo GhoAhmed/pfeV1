@@ -1,0 +1,10 @@
+@model List<Category>
+@{
+    ViewData["Title"] = "Categories";
+}
+@foreach (var category in Model)
+{
+    <h1>@category.CategoryName</h1>
+    <h1>@category.Description</h1>
+    <h1><img src="~/images/categories/@category.CategoryImage" /></h1>
+}

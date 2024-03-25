@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MVC.bundle.scp.css"
     },
     {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\css\\announcementDetails.css",
+      "PackagePath": "staticwebassets\\css\\announcementDetails.css"
+    },
+    {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },
@@ -55,6 +59,58 @@
     {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\avatars\\avatar2.png",
       "PackagePath": "staticwebassets\\images\\avatars\\avatar2.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\bateau.png",
+      "PackagePath": "staticwebassets\\images\\categories\\bateau.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\beach-volley.png",
+      "PackagePath": "staticwebassets\\images\\categories\\beach-volley.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\bowling.png",
+      "PackagePath": "staticwebassets\\images\\categories\\bowling.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\camp.png",
+      "PackagePath": "staticwebassets\\images\\categories\\camp.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\caravane.png",
+      "PackagePath": "staticwebassets\\images\\categories\\caravane.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\chambre.png",
+      "PackagePath": "staticwebassets\\images\\categories\\chambre.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\chateau.png",
+      "PackagePath": "staticwebassets\\images\\categories\\chateau.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\hotel.png",
+      "PackagePath": "staticwebassets\\images\\categories\\hotel.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\ile.png",
+      "PackagePath": "staticwebassets\\images\\categories\\ile.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\loger.png",
+      "PackagePath": "staticwebassets\\images\\categories\\loger.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\maison.png",
+      "PackagePath": "staticwebassets\\images\\categories\\maison.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\pin.png",
+      "PackagePath": "staticwebassets\\images\\categories\\pin.png"
+    },
+    {
+      "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\categories\\svg.png",
+      "PackagePath": "staticwebassets\\images\\categories\\svg.png"
     },
     {
       "Id": "D:\\asp\\pfe\\MVC\\wwwroot\\images\\logos\\logo1.png",

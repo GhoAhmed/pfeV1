@@ -19,8 +19,11 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var announcementsWithUsers = await _context.announcements.Include(a => a.AppUser).ToListAsync();
-        return View(announcementsWithUsers);
+        var announcements = await _context.announcements
+        .Include(a => a.AppUser)
+        .Include(a => a.Category)
+        .ToListAsync();
+        return View(announcements);
     }
     public IActionResult Privacy()
     {
@@ -32,4 +35,21 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    //Announcement Details
+    public async Task<IActionResult> AnnouncementDetails(int id)
+    {
+        var announcement = await _context.announcements
+            .Include(a => a.AppUser)
+            .Include(a => a.Category)
+            .FirstOrDefaultAsync(a => a.AnnouncementId == id);
+
+        if (announcement == null)
+        {
+            return NotFound();
+        }
+
+        return View(announcement);
+    }
+
 }

@@ -17,5 +17,6 @@ namespace MVC.Data
         }
 
         public DbSet<Announcement> announcements { get; set; } // Create announcements Table
+        public DbSet<Category> categories { get; set; }  // Create categories Table
     }
 }

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace MVC.Models
 {
@@ -17,7 +19,9 @@ namespace MVC.Models
         public string? Description { get; set; }
 
         [Required(ErrorMessage = "Category is required")]
-        public string? Category { get; set; }
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+        public Category? Category { get; set; }
 
         [Required(ErrorMessage = "At least one image URL is required")]
         public List<string> ImageUrls { get; set; } = new List<string>();

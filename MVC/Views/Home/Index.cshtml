@@ -7,62 +7,43 @@
     <!------------- Categories Carousel ------------->
     <div id="carouselCategory" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/maison.png" alt="slide1" /></a>
+            @{
+                var categories = Model.ToList();
+                var numCategories = categories.Count;
+                var numSlides = (int)Math.Ceiling((double)numCategories / 6);
+
+                for (int i = 0; i < numSlides; i++)
+                {
+                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                        <div class="row">
+                            @for (int j = i * 6; j < Math.Min((i + 1) * 6, numCategories); j++)
+                            {
+                                var category = categories[j];
+                                <div class="col-md-2 col-2">
+                                    <a asp-action="CategoryDetails" asp-controller="Category"
+                                        asp-route-id="@category.Category?.CategoryId" class="category-link"><img
+                                            src="~/images/categories/@category.Category?.CategoryImage"
+                                            alt="@category.Category?.CategoryName" /></a>
+                                </div>
+                            }
+                        </div>
                     </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/hotel.png" alt="slide2" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/caravane.png" alt="slide3" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/chambre.png" alt="slide4" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/la-grotte.png" alt="slide5" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/parasol.png" alt="slide6" /></a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/camping.png" alt="slide7" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/desert.png" alt="slide8" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/les-terres-agricoles.png" alt="slide9" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/bord-de-mer.png" alt="slide10" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/bateau.png" alt="slide11" /></a>
-                    </div>
-                    <div class="col-md-2 col-2">
-                        <a href="#"><img src="~/images/slides/bowling.png" alt="slide12" /></a>
-                    </div>
-                </div>
-            </div>
+                }
+            }
         </div>
         <a class="carousel-control-prev" href="#carouselCategory" role="button" data-bs-slide="prev"
             style="margin-left: -3rem;">
-            <span class=" bi bi-chevron-left" style="font-size: 2rem; color: black;"></span>
+            <span class="bi bi-chevron-left" style="font-size: 2rem; color: black;"></span>
             <span class="visually-hidden">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselCategory" role="button" data-bs-slide="next"
             style="margin-right: -3rem;">
-            <span class=" bi bi-chevron-right" style="font-size: 2rem; color: black;"></span>
+            <span class="bi bi-chevron-right" style="font-size: 2rem; color: black;"></span>
             <span class="visually-hidden">Next</span>
         </a>
     </div>
+
+
     <!------------- /Categories Carousel------------->
 
     <hr />
@@ -73,32 +54,30 @@
         {
             <div class="col-md-4">
                 <div class="card mb-3">
-                    <div id="carouselExample1" class="carousel slide">
+                    <div id="carouselExample_@announcement.AnnouncementId" class="carousel slide">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="~/images/adverts/test6.webp" class="d-block w-100" alt="Image 3">
-                            </div>
+                            @for (int i = 0; i < announcement.ImageUrls.Count; i++)
+                            {
+                                <div class="carousel-item @(i == 0 ? "active" : "")">
+                                    <img src="~/images/adverts/@announcement.ImageUrls[i]" class="d-block w-100"
+                                        alt="Image @(i + 1)">
+                                </div>
+                            }
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#carouselExample_@announcement.AnnouncementId" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselExample_@announcement.AnnouncementId" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">@announcement.Title</h5>
-                        <p class="card-text">@announcement.Description</p>
+                        <p class="card-text">@announcement.Category?.CategoryName</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="renter">
                                 <h6>By : @(announcement.AppUser?.Name ?? "Unknown")</h6>
@@ -113,11 +92,13 @@
                         <li class="list-group-item">Price per night: @announcement.PricePerNight</li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="card-link">Details</a>
+                        <a asp-action="AnnouncementDetails" asp-route-id="@announcement.AnnouncementId"
+                            class="card-link">Details</a>
                     </div>
                 </div>
             </div>
         }
+
     </div>
     <!--- /row --->
     <!------------- /Announcements ------------->

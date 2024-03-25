@@ -257,3 +257,6 @@ D:\asp\pfe\MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCor
 D:\asp\pfe\MVC\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\asp\pfe\MVC\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 D:\asp\pfe\MVC\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\asp\pfe\MVC\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\asp\pfe\MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\asp\pfe\MVC\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

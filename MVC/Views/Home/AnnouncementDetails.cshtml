@@ -1,0 +1,159 @@
+@model Announcement
+@{
+    ViewData["Title"] = "Announcement Details";
+}
+
+<!-- content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row gx-5">
+            <aside class="col-lg-6">
+                <div class="border rounded-4 mb-3 d-flex justify-content-center">
+                    <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image"
+                        href="~/images/adverts/@Model.ImageUrls[0]">
+                        <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
+                            src="~/images/adverts/@Model.ImageUrls[0]" />
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center mb-3">
+                    <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"
+                        href="~/images/adverts/@Model.ImageUrls[1]" class="item-thumb">
+                        <img width="60" height="60" class="rounded-2" src="~/images/adverts/@Model.ImageUrls[1]" />
+                    </a>
+                    <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"
+                        href="~/images/adverts/@Model.ImageUrls[2]" class="item-thumb">
+                        <img width="60" height="60" class="rounded-2" src="~/images/adverts/@Model.ImageUrls[2]" />
+                    </a>
+                </div>
+                <!-- thumbs-wrap.// -->
+                <!-- gallery-wrap .end// -->
+            </aside>
+            <main class="col-lg-6">
+                <div class="ps-lg-3">
+                    <h4 class="title text-dark">
+                        <p>@Model.Title</p>
+                    </h4>
+                    <div class="d-flex flex-row my-3">
+                        <div class="text-warning mb-1 me-2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-1">
+                                @Model.Status
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="h5">@Model.PricePerMonth</span>
+                        <span class="text-muted">/per month</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="h5">@Model.PricePerNight</span>
+                        <span class="text-muted">/per night</span>
+                    </div>
+
+                    <p>
+                        @Model.Description
+                    </p>
+
+                    <div class="row">
+                        <dt class="col-3">Category</dt>
+                        <dd class="col-9">@Model.Category?.CategoryName</dd>
+
+                        <dt class="col-3">Space</dt>
+                        <dd class="col-9">@Model.Space</dd>
+
+                        <dt class="col-3">Address</dt>
+                        <dd class="col-9">@Model.Address</dd>
+
+                        <dt class="col-3">Posted by</dt>
+                        <dd class="col-9">@Model.AppUser?.Name</dd>
+                    </div>
+
+                    <hr />
+                    <a href="#" class="btn btn-warning shadow-0"> Reserve </a>
+                    <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to
+                        favoris
+                    </a>
+                    <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i
+                            class="me-1 fa fa-heart fa-lg"></i> Contact </a>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+<!-- content -->
+
+<section class="bg-light border-top py-4">
+    <div class="container">
+        <div class="row gx-4">
+            <div class="col-lg-8 mb-4">
+                <h2>Desc</h2>
+            </div>
+            <div class="col-lg-4">
+                <div class="px-0 border rounded-2 shadow-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Similar items</h5>
+                            <div class="d-flex mb-3">
+                                <a href="#" class="me-3">
+                                    <img src="~/images/adverts/test2.webp" style="min-width: 96px; height: 96px;"
+                                        class="img-md img-thumbnail" />
+                                </a>
+                                <div class="info">
+                                    <a href="#" class="nav-link mb-1">
+                                        Rucksack Backpack Large <br />
+                                        Line Mounts
+                                    </a>
+                                    <strong class="text-dark"> $38.90</strong>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <a href="#" class="me-3">
+                                    <img src="~/images/adverts/test3.webp" style="min-width: 96px; height: 96px;"
+                                        class="img-md img-thumbnail" />
+                                </a>
+                                <div class="info">
+                                    <a href="#" class="nav-link mb-1">
+                                        Summer New Men's Denim <br />
+                                        Jeans Shorts
+                                    </a>
+                                    <strong class="text-dark"> $29.50</strong>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <a href="#" class="me-3">
+                                    <img src="~/images/adverts/test3.webp" style="min-width: 96px; height: 96px;"
+                                        class="img-md img-thumbnail" />
+                                </a>
+                                <div class="info">
+                                    <a href="#" class="nav-link mb-1"> T-shirts with multiple colors</br> for men and
+                                        lady
+                                    </a>
+                                    <strong class="text-dark"> $120.00</strong>
+                                </div>
+                            </div>
+
+                            <div class="d-flex">
+                                <a href="#" class="me-3">
+                                    <img src="~/images/adverts/test4.webp" style="min-width: 96px; height: 96px;"
+                                        class="img-md img-thumbnail" />
+                                </a>
+                                <div class="info">
+                                    <a href="#" class="nav-link mb-1"> Blazer Suit Dress Jacket</br> for Men Blue color
+                                    </a>
+                                    <strong class="text-dark"> $339.90</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
