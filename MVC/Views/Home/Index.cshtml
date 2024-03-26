@@ -6,7 +6,7 @@
 <div class="container text-center">
     <!------------- Categories Carousel ------------->
     <div id="carouselCategory" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner" id="inner">
             @{
                 var categories = Model.ToList();
                 var numCategories = categories.Count;
@@ -19,11 +19,13 @@
                             @for (int j = i * 6; j < Math.Min((i + 1) * 6, numCategories); j++)
                             {
                                 var category = categories[j];
-                                <div class="col-md-2 col-2">
+                                <div class="col-md-2 col-2" id="categories">
                                     <a asp-action="CategoryDetails" asp-controller="Category"
                                         asp-route-id="@category.Category?.CategoryId" class="category-link"><img
                                             src="~/images/categories/@category.Category?.CategoryImage"
                                             alt="@category.Category?.CategoryName" /></a>
+                                    <span class="category-name">@category.Category?.CategoryName</span>
+
                                 </div>
                             }
                         </div>
@@ -42,11 +44,9 @@
             <span class="visually-hidden">Next</span>
         </a>
     </div>
-
-
     <!------------- /Categories Carousel------------->
 
-    <hr />
+
     <!------------- Announcements ------------->
     <!--- row --->
     <div class="row">
@@ -93,7 +93,7 @@
                     </ul>
                     <div class="card-body">
                         <a asp-action="AnnouncementDetails" asp-route-id="@announcement.AnnouncementId"
-                            class="card-link">Details</a>
+                            asp-controller="Announcement" class="card-link">Details</a>
                     </div>
                 </div>
             </div>

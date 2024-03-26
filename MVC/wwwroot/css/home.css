@@ -14,3 +14,55 @@
     width: 40%;
     height: 40%;
 }
+
+#carouselCategory {
+    margin-bottom: 35px;
+}
+
+#inner {
+    padding: 28px;
+}
+
+#categories {
+    position: relative;
+}
+
+.category-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: -2rem;
+    /* Optional: Add a background color for better readability */
+    color: #20263e;
+    /* Optional: Set text color */
+    padding: 5px;
+    text-align: center;
+    /* Optional: Center the text */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #inner {
+        padding: 20px;
+        /* Adjust padding for smaller screens */
+    }
+
+    #carouselCategory {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .category-name {
+        font-size: 10px;
+        /* Adjust font size for smaller screens */
+        margin-bottom: -2rem;
+        /* Adjust margin for smaller screens */
+        margin-left: 5px;
+    }
+
+    #carouselCategory {
+        margin-bottom: 30px;
+    }
+}

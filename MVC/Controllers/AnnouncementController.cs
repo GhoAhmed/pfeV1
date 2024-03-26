@@ -23,6 +23,21 @@ namespace MVC.Controllers
             return View(announcements);
         }
 
+        public async Task<IActionResult> AnnouncementDetails(int id)
+        {
+            var announcement = await _context.announcements
+                .Include(a => a.AppUser)
+                .Include(a => a.Category)
+                .FirstOrDefaultAsync(a => a.AnnouncementId == id);
+
+            if (announcement == null)
+            {
+                return NotFound();
+            }
+
+            return View(announcement);
+        }
+
 
 
     }
